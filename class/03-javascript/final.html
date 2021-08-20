@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>회원가입</title>
+    <script>
+        function checkValidation(){
+            const email = document.getElementById("email").nodeValue
+            const name = document.getElementById("name").value
+            const password1 = document.getElementById("password1").value
+            const password2 = document.getElementById("password2").value
+
+            if(email !=="" && name !=="" && password1 !=="" && password2 !=="")
+            document.getElementById("signup").style = "background-color: yellow;"
+            else{
+                document.getElementById("signup").style = ""
+            }
+        }
+
+        function changePhone(){
+            const phone1 = document.getElementById("phone1").value
+
+            if(phone1.length === 3){
+                document.getElementById("phone2").focus()
+            }
+        }
+        function changePhone2(){
+            const phone2 = document.getElementById("phone2").value
+
+            if(phone2.length === 4){
+                document.getElementById("phone3").focus()
+            }
+        }
+        function changePhone3(){
+            const phone3 = document.getElementById("phone3").value
+
+            if(phone3.length === 4){
+                document.getElementById("phone4").focus()
+            }
+        }
+
+        function getToken(){
+            const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+
+            document.getElementById("zzz").innerText = token
+        }
+        function timer(){
+            let timer =180
+            setInterval(() =>{
+                if(timer >=0){
+                    const minutes = Math.floor(timer / 60)
+                    const seconds = timer % 60
+                document.getElementById("aaa").innerText = String(minutes) + ":" + String(seconds).padStart(2,"0")
+                
+                if(timer ===0)
+                document.getElementById("bbb").setAttribute("disabled", "flase")
+                timer -=1
+                }
+
+            }, 200)
+        }
+        function btn(){
+            document.getElementById("aaa").innerText = ""
+            alert("인증이 완료되었습니다")
+        }
+    </script>
+</head>
+<body>
+    <div>회원가입</div>
+    <input id="email" type="text" placeholder="이메일을 입력해 주세요." onchange="checkValidation()">
+    <input id="name" type="text" placeholder="이름을 입력해 주세요" onchange="checkValidation()"> 
+    <input id="password1" type="text" placeholder="비밀번호를 입력해 주세요." onchange="checkValidation()"> 
+    <input id="password2" type="text" placeholder="비밀번호를 다시 입력해 주세요." onchange="checkValidation()"> <br>
+    <input id="phone1" size="3" type="text" onchange="changePhone()" onkeyup="onchange()">- 
+    <input id="phone2" size="4" type="text" onchange="changePhone2()" onkeyup="onchange()">-
+    <input id="phone3" size="4" type="text" onchange="changePhone3()" onkeyup="onchange()">
+    <div id= zzz>000000</div>
+    <button id="phone4" onclick="getToken(); timer()">인증번호 전송</button>
+    <div id="aaa"></div>
+    <button id="bbb" onclick="btn()">인증확인</button>
+    <div></div>
+    <input name="radio" type="radio">여성
+    <input name="radio" type="radio">남성
+    <div></div>
+    <input type="checkbox">이용약관 개인정보 수집 및 이용, 마케팅 활용선택에 모두 동의합니다.
+    <div></div>
+    <button id="signup">가입하기</button>
+
+    
+    
+
+
+
+</body>
+</html>

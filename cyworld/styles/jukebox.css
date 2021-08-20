@@ -1,0 +1,113 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html,body{
+    width:100%;
+    height: 100%;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.wrapper__header{
+    width: 100%;
+    height: 25px;
+    border-bottom: 1px solid #999999;
+}
+
+.wrapper__header .title{
+    color: #55b2d4;
+}
+.wrapper__header .subtitle {
+	font-size: small;
+	padding-left: 5px;
+}
+
+.wrapper__music{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 11px;
+    padding-top: 12px;
+
+}
+
+.music__album{
+    width: 120px;
+    height: 120px;
+}
+
+.music__name{
+   width: 120px;
+   text-align: center;
+   color: #0F465E; 
+   font-size: 11px;  
+   font-weight: 700;  
+}
+.music__singer{
+    width: 120px;
+    text-align: center;
+    color: #999999;
+    font-size: 10px;
+}
+
+.table__header{
+    width: 100%;
+    height: 25px;
+}
+
+.table__header .title{
+    color: #55b2d4;
+}
+.table__header .subtitle {
+	font-size: small;
+	padding-left: 5px;
+}
+
+
+.chart{
+    width:100%;
+    border-spacing: 0px;
+    padding-top: 8px;
+    
+}
+th{
+    background-color: #EEEEEE;
+    border-bottom: slategray dashed 1px;
+    border-top: slategray solid 1px;
+    padding-top:5px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color:gray;
+}
+td{
+    border-bottom: gray dashed 1px;
+    height: 20px;
+    font-size: 10px;
+    color: #0f465e;
+}
+.chart__checkbox{
+    width: 5%;
+    text-align: center;
+}
+.chart__number{
+    width: 15%;
+    text-align: center;
+}
+.chart__name{
+    width:60%;
+    text-align: left;
+}
+
+.chart__singer{
+    width:20%;
+    text-align: left;
+}
